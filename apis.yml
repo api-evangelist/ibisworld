@@ -8,10 +8,10 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Market Research
-  - Industry Data
   - Business Intelligence
   - Economics
+  - Industry Data
+  - Market Research
 url: >-
   https://raw.githubusercontent.com/api-evangelist/ibisworld/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -26,8 +26,8 @@ apis:
       of industries across global markets.
     humanURL: https://www.ibisworld.com/api/
     tags:
-      - Market Research
       - Industry Data
+      - Market Research
     properties:
       - type: Documentation
         url: https://www.ibisworld.com/api/
