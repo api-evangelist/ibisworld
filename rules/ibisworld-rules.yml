@@ -1,0 +1,37 @@
+aid: ibisworld:ibisworld-rules
+name: IBISWorld Rules
+description: >-
+  Governance and operational rules for the IBISWorld API artifacts maintained
+  in this repository.
+tags:
+  - Governance
+  - Rules
+  - IBISWorld
+rules:
+  - name: Specification Format
+    description: >-
+      All API descriptions in this repository must use OpenAPI 3.0 or later in
+      YAML format and live under the openapi/ directory.
+  - name: Authentication
+    description: >-
+      Every operation requires an OAuth 2.0 bearer token issued by IBISWorld;
+      anonymous access is not supported.
+  - name: Rate Limiting
+    description: >-
+      Clients must respect IBISWorld API rate limits and back off on HTTP 429
+      responses; sustained violation may result in revoked credentials.
+  - name: Data Usage
+    description: >-
+      Industry data retrieved via the API is subject to IBISWorld terms of use
+      and may not be redistributed without authorization.
+  - name: Versioning
+    description: >-
+      The API is versioned at v3; breaking changes will be released under a new
+      version path and announced in advance.
+  - name: APIs.yml Sync
+    description: >-
+      The apis.yml index in this repository must reference all OpenAPI files
+      under openapi/ and be updated when artifacts change.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -11,33 +11,40 @@ IBISWorld is a leading provider of industry research and market intelligence, of
 
 ## Tags:
 
- - Market Research, Industry Data, Business Intelligence, Economics
+ - Business Intelligence, Economics, Industry Data, Market Research
 
 ## Timestamps
 
 - **Created:** 2026-03-16 
-- **Modified:** 2026-03-16 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
 ### IBISWorld API
-The IBISWorld API provides programmatic access to industry research data, market intelligence reports, and economic forecasts for thousands of industries across global markets.
+The IBISWorld API provides programmatic access to industry research data, market intelligence reports, business environment profiles, classification systems, and economic forecasts for thousands of industries across global markets.
 
 **Human URL:** [https://www.ibisworld.com/api/](https://www.ibisworld.com/api/)
 
+**Base URL:** https://api.ibisworld.com/v3
 
 #### Tags:
 
- - Market Research, Industry Data
+ - Industry Data, Market Research
 
 #### Properties
 
 - [Documentation](https://www.ibisworld.com/api/)
+- [Reference](https://api.ibisworld.com/docs/)
+- [OpenAPI](openapi/ibisworld-openapi.yml)
 
 ## Common Properties
 
 - [Website](https://www.ibisworld.com/)
 - [Portal](https://www.ibisworld.com/api/)
+- [Documentation](https://api.ibisworld.com/docs/)
+- [Data Navigator](https://data-navigator.ibisworld.com/)
+- [Terms of Service](https://www.ibisworld.com/terms-of-use/)
+- [Rules](rules/ibisworld-rules.yml)
 
 ## Maintainers
 

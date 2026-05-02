@@ -1,0 +1,289 @@
+openapi: 3.0.3
+info:
+  title: IBISWorld API
+  description: >-
+    The IBISWorld API provides programmatic access to industry research data,
+    market intelligence reports, business environment profiles, classification
+    systems, and economic forecasts for thousands of industries across global
+    markets. Authentication uses OAuth 2.0 bearer tokens.
+  version: v3
+  contact:
+    name: IBISWorld API Support
+    url: https://www.ibisworld.com/api/
+  termsOfService: https://www.ibisworld.com/terms-of-use/
+servers:
+  - url: https://api.ibisworld.com/v3
+    description: IBISWorld API production endpoint
+tags:
+  - name: Industry
+    description: Industry research reports and market intelligence data.
+  - name: Company
+    description: Company-specific information and lookups.
+  - name: Business Environment
+    description: Macroeconomic and business environment profile data.
+  - name: Classification
+    description: Industry classification systems and taxonomies.
+  - name: Downloads
+    description: Bulk data export and download operations.
+paths:
+  /industry/v3/reportlist:
+    post:
+      summary: List industry reports
+      description: >-
+        Retrieves the list of available industry reports for a given country
+        and language. Returns report metadata including codes, titles, publish
+        dates, and report collections.
+      operationId: listReports
+      tags:
+        - Industry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - Country
+                - Language
+              properties:
+                Country:
+                  type: string
+                  description: Country code (e.g., US, UK, AU).
+                  example: US
+                Language:
+                  type: string
+                  description: Language code (e.g., en).
+                  example: en
+      responses:
+        '200':
+          description: A list of industry reports.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Report'
+        '401':
+          description: Missing or invalid bearer token.
+        '429':
+          description: Rate limit exceeded.
+  /industry/v3/sections:
+    post:
+      summary: List report sections
+      description: >-
+        Retrieves the list of report sections that can be requested for a given
+        industry report (for example definition, outlookanalysis, financialratios).
+      operationId: listSections
+      tags:
+        - Industry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Country:
+                  type: string
+                Language:
+                  type: string
+                ReportCode:
+                  type: string
+                  description: The IBISWorld report code.
+      responses:
+        '200':
+          description: A list of available report sections.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Section'
+        '401':
+          description: Missing or invalid bearer token.
+  /industry/v3/report:
+    post:
+      summary: Retrieve industry report
+      description: >-
+        Retrieves the content for a specific industry report and the requested
+        sections.
+      operationId: getReport
+      tags:
+        - Industry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ReportCode
+              properties:
+                ReportCode:
+                  type: string
+                Country:
+                  type: string
+                Language:
+                  type: string
+                Sections:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Report content payload.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Missing or invalid bearer token.
+  /company/v3/lookup:
+    post:
+      summary: Look up company
+      description: Retrieve company-specific industry context and classification.
+      operationId: lookupCompany
+      tags:
+        - Company
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                CompanyName:
+                  type: string
+                Country:
+                  type: string
+      responses:
+        '200':
+          description: Company match results.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '401':
+          description: Missing or invalid bearer token.
+  /environment/v3/profilelist:
+    post:
+      summary: List business environment profiles
+      description: Retrieves available business environment profiles by country.
+      operationId: listEnvironmentProfiles
+      tags:
+        - Business Environment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Country:
+                  type: string
+                Language:
+                  type: string
+      responses:
+        '200':
+          description: A list of business environment profiles.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '401':
+          description: Missing or invalid bearer token.
+  /classification/v3/systems:
+    post:
+      summary: List classification systems
+      description: Returns supported industry classification systems and codes.
+      operationId: listClassificationSystems
+      tags:
+        - Classification
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Country:
+                  type: string
+      responses:
+        '200':
+          description: A list of classification systems.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '401':
+          description: Missing or invalid bearer token.
+  /downloads/v3/list:
+    post:
+      summary: List available downloads
+      description: Retrieves the list of available data exports for the account.
+      operationId: listDownloads
+      tags:
+        - Downloads
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Country:
+                  type: string
+      responses:
+        '200':
+          description: A list of available downloads.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '401':
+          description: Missing or invalid bearer token.
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: OAuth 2.0 bearer token authentication.
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.ibisworld.com/oauth/token
+          scopes: {}
+  schemas:
+    Report:
+      type: object
+      properties:
+        Code:
+          type: string
+          description: The IBISWorld report code.
+        Title:
+          type: string
+          description: Report title.
+        PublishedDate:
+          type: string
+          format: date
+          description: Date the report was last published.
+        ReportCollection:
+          type: string
+          description: The collection the report belongs to.
+    Section:
+      type: object
+      properties:
+        Code:
+          type: string
+        Name:
+          type: string
+        Description:
+          type: string
+security:
+  - OAuth2: []
