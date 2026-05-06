@@ -1,0 +1,254 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IBISWorld API
+  description: The IBISWorld API provides programmatic access to industry research data, market intelligence reports, business
+    environment profiles, classification systems, and economic forecasts for thousands of industries across global markets.
+    Authentication uses OAuth 2.0 bearer tokens.
+  tags:
+  - Ibisworld
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: ibisworld
+    baseUri: https://api.ibisworld.com/v3
+    description: IBISWorld API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{IBISWORLD_TOKEN}}'
+    resources:
+    - name: industry-v3-reportlist
+      path: /industry/v3/reportlist
+      operations:
+      - name: listreports
+        method: POST
+        description: List industry reports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: industry-v3-sections
+      path: /industry/v3/sections
+      operations:
+      - name: listsections
+        method: POST
+        description: List report sections
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: industry-v3-report
+      path: /industry/v3/report
+      operations:
+      - name: getreport
+        method: POST
+        description: Retrieve industry report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: company-v3-lookup
+      path: /company/v3/lookup
+      operations:
+      - name: lookupcompany
+        method: POST
+        description: Look up company
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: environment-v3-profilelist
+      path: /environment/v3/profilelist
+      operations:
+      - name: listenvironmentprofiles
+        method: POST
+        description: List business environment profiles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: classification-v3-systems
+      path: /classification/v3/systems
+      operations:
+      - name: listclassificationsystems
+        method: POST
+        description: List classification systems
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: downloads-v3-list
+      path: /downloads/v3/list
+      operations:
+      - name: listdownloads
+        method: POST
+        description: List available downloads
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: ibisworld-rest
+    description: REST adapter for IBISWorld API.
+    resources:
+    - path: /industry/v3/reportlist
+      name: listreports
+      operations:
+      - method: POST
+        name: listreports
+        description: List industry reports
+        call: ibisworld.listreports
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /industry/v3/sections
+      name: listsections
+      operations:
+      - method: POST
+        name: listsections
+        description: List report sections
+        call: ibisworld.listsections
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /industry/v3/report
+      name: getreport
+      operations:
+      - method: POST
+        name: getreport
+        description: Retrieve industry report
+        call: ibisworld.getreport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /company/v3/lookup
+      name: lookupcompany
+      operations:
+      - method: POST
+        name: lookupcompany
+        description: Look up company
+        call: ibisworld.lookupcompany
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /environment/v3/profilelist
+      name: listenvironmentprofiles
+      operations:
+      - method: POST
+        name: listenvironmentprofiles
+        description: List business environment profiles
+        call: ibisworld.listenvironmentprofiles
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /classification/v3/systems
+      name: listclassificationsystems
+      operations:
+      - method: POST
+        name: listclassificationsystems
+        description: List classification systems
+        call: ibisworld.listclassificationsystems
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /downloads/v3/list
+      name: listdownloads
+      operations:
+      - method: POST
+        name: listdownloads
+        description: List available downloads
+        call: ibisworld.listdownloads
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: ibisworld-mcp
+    transport: http
+    description: MCP adapter for IBISWorld API for AI agent use.
+    tools:
+    - name: listreports
+      description: List industry reports
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibisworld.listreports
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listsections
+      description: List report sections
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibisworld.listsections
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getreport
+      description: Retrieve industry report
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibisworld.getreport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lookupcompany
+      description: Look up company
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibisworld.lookupcompany
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listenvironmentprofiles
+      description: List business environment profiles
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibisworld.listenvironmentprofiles
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listclassificationsystems
+      description: List classification systems
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibisworld.listclassificationsystems
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listdownloads
+      description: List available downloads
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibisworld.listdownloads
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    IBISWORLD_TOKEN: IBISWORLD_TOKEN
