@@ -50,6 +50,12 @@ common:
     url: https://www.ibisworld.com/terms-of-use/
   - type: Rules
     url: rules/ibisworld-rules.yml
+  - type: Integrations
+    url: https://www.ibisworld.com/integrations/
+integrations:
+  - name: Snowflake
+  - name: nCino
+  - name: Relpro
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
