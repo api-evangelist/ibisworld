@@ -46,7 +46,7 @@ common:
     url: https://api.ibisworld.com/docs/
   - type: Data Navigator
     url: https://data-navigator.ibisworld.com/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.ibisworld.com/terms-of-use/
   - type: Rules
     url: rules/ibisworld-rules.yml
