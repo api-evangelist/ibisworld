@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IBISWorld API — Downloads
+  description: 'IBISWorld API — Downloads. 1 operations. Lead operation: List available downloads. Self-contained Naftiko
+    capability covering one Ibisworld business surface.'
+  tags:
+  - Ibisworld
+  - Downloads
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IBISWORLD_API_KEY: IBISWORLD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibisworld-downloads
+    baseUri: https://api.ibisworld.com/v3
+    description: IBISWorld API — Downloads business capability. Self-contained, no shared references.
+    resources:
+    - name: downloads-v3-list
+      path: /downloads/v3/list
+      operations:
+      - name: listdownloads
+        method: POST
+        description: List available downloads
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IBISWORLD_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibisworld-downloads-rest
+    port: 8080
+    description: REST adapter for IBISWorld API — Downloads. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/downloads/v3/list
+      name: downloads-v3-list
+      description: REST surface for downloads-v3-list.
+      operations:
+      - method: POST
+        name: listdownloads
+        description: List available downloads
+        call: ibisworld-downloads.listdownloads
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibisworld-downloads-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IBISWorld API — Downloads. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-available-downloads
+      description: List available downloads
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: ibisworld-downloads.listdownloads
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

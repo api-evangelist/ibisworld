@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IBISWorld API — Company
+  description: 'IBISWorld API — Company. 1 operations. Lead operation: Look up company. Self-contained Naftiko capability
+    covering one Ibisworld business surface.'
+  tags:
+  - Ibisworld
+  - Company
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IBISWORLD_API_KEY: IBISWORLD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ibisworld-company
+    baseUri: https://api.ibisworld.com/v3
+    description: IBISWorld API — Company business capability. Self-contained, no shared references.
+    resources:
+    - name: company-v3-lookup
+      path: /company/v3/lookup
+      operations:
+      - name: lookupcompany
+        method: POST
+        description: Look up company
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IBISWORLD_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ibisworld-company-rest
+    port: 8080
+    description: REST adapter for IBISWorld API — Company. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/company/v3/lookup
+      name: company-v3-lookup
+      description: REST surface for company-v3-lookup.
+      operations:
+      - method: POST
+        name: lookupcompany
+        description: Look up company
+        call: ibisworld-company.lookupcompany
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ibisworld-company-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IBISWorld API — Company. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: look-up-company
+      description: Look up company
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ibisworld-company.lookupcompany
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
