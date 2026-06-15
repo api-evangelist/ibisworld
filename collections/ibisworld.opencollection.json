@@ -1,0 +1,166 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IBISWorld API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.ibisworld.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Industry",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List industry reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ibisworld.com/v3/industry/v3/reportlist",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves the list of available industry reports for a given country and language. Returns report metadata including codes, titles, publish dates, and report collections."
+        },
+        {
+          "info": {
+            "name": "List report sections",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ibisworld.com/v3/industry/v3/sections",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves the list of report sections that can be requested for a given industry report (for example definition, outlookanalysis, financialratios)."
+        },
+        {
+          "info": {
+            "name": "Retrieve industry report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ibisworld.com/v3/industry/v3/report",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves the content for a specific industry report and the requested sections."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Company",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Look up company",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ibisworld.com/v3/company/v3/lookup",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve company-specific industry context and classification."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Business Environment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List business environment profiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ibisworld.com/v3/environment/v3/profilelist",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves available business environment profiles by country."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Classification",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List classification systems",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ibisworld.com/v3/classification/v3/systems",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns supported industry classification systems and codes."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Downloads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List available downloads",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ibisworld.com/v3/downloads/v3/list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves the list of available data exports for the account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
