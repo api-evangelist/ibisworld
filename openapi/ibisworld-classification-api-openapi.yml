@@ -1,0 +1,54 @@
+openapi: 3.0.3
+info:
+  title: IBISWorld Business Environment Classification API
+  description: The IBISWorld API provides programmatic access to industry research data, market intelligence reports, business environment profiles, classification systems, and economic forecasts for thousands of industries across global markets. Authentication uses OAuth 2.0 bearer tokens.
+  version: v3
+  contact:
+    name: IBISWorld API Support
+    url: https://www.ibisworld.com/api/
+  termsOfService: https://www.ibisworld.com/terms-of-use/
+servers:
+- url: https://api.ibisworld.com/v3
+  description: IBISWorld API production endpoint
+security:
+- OAuth2: []
+tags:
+- name: Classification
+  description: Industry classification systems and taxonomies.
+paths:
+  /classification/v3/systems:
+    post:
+      summary: List classification systems
+      description: Returns supported industry classification systems and codes.
+      operationId: listClassificationSystems
+      tags:
+      - Classification
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Country:
+                  type: string
+      responses:
+        '200':
+          description: A list of classification systems.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '401':
+          description: Missing or invalid bearer token.
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: OAuth 2.0 bearer token authentication.
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.ibisworld.com/oauth/token
+          scopes: {}
