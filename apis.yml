@@ -5,7 +5,20 @@ description: >-
   across global markets. IBISWorld provides APIs for accessing industry reports, market size data, and economic
   forecasts programmatically.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ibisworld.png
 tags:
   - Business Intelligence
   - Economics
@@ -16,24 +29,76 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: ibisworld:ibisworld-api
-    name: IBISWorld API
-    description: >-
-      The IBISWorld API provides programmatic access to industry research data, market intelligence reports, business
-      environment profiles, classification systems, and economic forecasts for thousands of industries across global
-      markets.
-    humanURL: https://www.ibisworld.com/api/
-    baseURL: https://api.ibisworld.com/v3
-    tags:
-      - Industry Data
-      - Market Research
-    properties:
-      - type: Documentation
-        url: https://www.ibisworld.com/api/
-      - type: Reference
-        url: https://api.ibisworld.com/docs/
-      - type: OpenAPI
-        url: openapi/ibisworld-openapi.yml
+- aid: ibisworld:ibisworld-business-environment-api
+  name: IBISWorld Business Environment API
+  description: Macroeconomic and business environment profile data.
+  humanURL: https://www.ibisworld.com/api/
+  baseURL: https://api.ibisworld.com/v3
+  tags:
+  - Business Environment
+  properties:
+  - type: OpenAPI
+    url: openapi/ibisworld-business-environment-api-openapi.yml
+  - type: Documentation
+    url: https://www.ibisworld.com/api/
+  - type: Reference
+    url: https://api.ibisworld.com/docs/
+- aid: ibisworld:ibisworld-classification-api
+  name: IBISWorld Classification API
+  description: Industry classification systems and taxonomies.
+  humanURL: https://www.ibisworld.com/api/
+  baseURL: https://api.ibisworld.com/v3
+  tags:
+  - Classification
+  properties:
+  - type: OpenAPI
+    url: openapi/ibisworld-classification-api-openapi.yml
+  - type: Documentation
+    url: https://www.ibisworld.com/api/
+  - type: Reference
+    url: https://api.ibisworld.com/docs/
+- aid: ibisworld:ibisworld-company-api
+  name: IBISWorld Company API
+  description: Company-specific information and lookups.
+  humanURL: https://www.ibisworld.com/api/
+  baseURL: https://api.ibisworld.com/v3
+  tags:
+  - Company
+  properties:
+  - type: OpenAPI
+    url: openapi/ibisworld-company-api-openapi.yml
+  - type: Documentation
+    url: https://www.ibisworld.com/api/
+  - type: Reference
+    url: https://api.ibisworld.com/docs/
+- aid: ibisworld:ibisworld-downloads-api
+  name: IBISWorld Downloads API
+  description: Bulk data export and download operations.
+  humanURL: https://www.ibisworld.com/api/
+  baseURL: https://api.ibisworld.com/v3
+  tags:
+  - Downloads
+  properties:
+  - type: OpenAPI
+    url: openapi/ibisworld-downloads-api-openapi.yml
+  - type: Documentation
+    url: https://www.ibisworld.com/api/
+  - type: Reference
+    url: https://api.ibisworld.com/docs/
+- aid: ibisworld:ibisworld-industry-api
+  name: IBISWorld Industry API
+  description: Industry research reports and market intelligence data.
+  humanURL: https://www.ibisworld.com/api/
+  baseURL: https://api.ibisworld.com/v3
+  tags:
+  - Industry
+  properties:
+  - type: OpenAPI
+    url: openapi/ibisworld-industry-api-openapi.yml
+  - type: Documentation
+    url: https://www.ibisworld.com/api/
+  - type: Reference
+    url: https://api.ibisworld.com/docs/
 common:
   - type: AgenticAccess
     url: agentic-access/ibisworld-agentic-access.yml
