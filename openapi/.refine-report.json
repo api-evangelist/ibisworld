@@ -1,0 +1,22 @@
+{
+  "provider": "ibisworld",
+  "sources": [
+    "ibisworld-business-environment-api-openapi.yml",
+    "ibisworld-classification-api-openapi.yml",
+    "ibisworld-company-api-openapi.yml",
+    "ibisworld-downloads-api-openapi.yml",
+    "ibisworld-industry-api-openapi.yml"
+  ],
+  "outputs": [
+    "ibisworld-business-environment-api-openapi.yml",
+    "ibisworld-classification-api-openapi.yml",
+    "ibisworld-company-api-openapi.yml",
+    "ibisworld-downloads-api-openapi.yml",
+    "ibisworld-industry-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
