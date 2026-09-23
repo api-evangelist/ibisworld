@@ -1,11 +1,7 @@
 {
   "provider": "ibisworld",
   "sources": [
-    "ibisworld-business-environment-api-openapi.yml",
-    "ibisworld-classification-api-openapi.yml",
-    "ibisworld-company-api-openapi.yml",
-    "ibisworld-downloads-api-openapi.yml",
-    "ibisworld-industry-api-openapi.yml"
+    "_original/ibisworld-openapi.yml"
   ],
   "outputs": [
     "ibisworld-business-environment-api-openapi.yml",
@@ -17,6 +13,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ibisworld-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ibisworld-business-environment-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ibisworld-classification-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ibisworld-company-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ibisworld-downloads-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ibisworld-industry-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

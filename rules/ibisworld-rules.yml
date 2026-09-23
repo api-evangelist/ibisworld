@@ -1,9 +1,9 @@
-aid: ibisworld:ibisworld-rules
-name: IBISWorld Rules
+x-aid: ibisworld:ibisworld-rules
+x-name: IBISWorld Rules
 description: >-
   Governance and operational rules for the IBISWorld API artifacts maintained
   in this repository.
-tags:
+x-tags:
   - Governance
   - Rules
   - IBISWorld
@@ -32,6 +32,6 @@ rules:
     description: >-
       The apis.yml index in this repository must reference all OpenAPI files
       under openapi/ and be updated when artifacts change.
-maintainers:
+x-maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

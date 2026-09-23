@@ -1,0 +1,30 @@
+# Front Door AI Index — ibisworld — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: ibisworld
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.ibisworld.com
+  final_host: www.ibisworld.com
+  ownership: own
+  owner: ibisworld
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 14
+  host_score: 14
+  density: 14.69
+  words: 953
+  tiers:
+    agentic: 3
+    core: 6
+    model: 5
+  ambiguous: 11
+  top_terms:
+    intelligence: 11
+    AI: 6
+    Claude: 4
+    MCP: 2
+    ChatGPT: 1
+    copilot: 1
