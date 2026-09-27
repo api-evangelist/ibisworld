@@ -123,15 +123,6 @@ paths:
           description: Missing or invalid bearer token.
 components:
   schemas:
-    Section:
-      type: object
-      properties:
-        Code:
-          type: string
-        Name:
-          type: string
-        Description:
-          type: string
     Report:
       type: object
       properties:
@@ -148,6 +139,15 @@ components:
         ReportCollection:
           type: string
           description: The collection the report belongs to.
+    Section:
+      type: object
+      properties:
+        Code:
+          type: string
+        Name:
+          type: string
+        Description:
+          type: string
   securitySchemes:
     OAuth2:
       type: oauth2
