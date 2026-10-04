@@ -1,0 +1,39 @@
+slug: ibisworld
+provider: IBISWorld
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Business Environment
+  spec_file: ibisworld-business-environment-api-openapi.yml
+  capability_id: BC-400.30
+  capability_id_l1: BC-400
+  capability_name: Market Intelligence Management
+  confidence: 0.7
+  evidence: POST /environment/v3/profilelist listEnvironmentProfiles "List business environment profiles";
+    description "programmatic access to industry research data, market intelligence reports, business
+    environment profiles"
+  reason: Delivers industry research and business-environment profile data — externally sourced market
+    research consumed for market and competitive intelligence. The capability realised for any buyer is
+    Market Intelligence Management.
+- tag: Industry
+  spec_file: ibisworld-industry-api-openapi.yml
+  capability_id: BC-400.30
+  capability_id_l1: BC-400
+  capability_name: Market Intelligence Management
+  confidence: 0.7
+  evidence: POST /industry/v3/report  getReport  Retrieve industry report; 'programmatic access to industry
+    research data, market intelligence reports'
+  reason: The operations deliver industry research reports and market intelligence content, which is the
+    substance of Market Intelligence Management (market research, competitive intelligence). Confidence
+    held at 0.7 because the API only distributes research artefacts rather than managing an intelligence
+    programme.

@@ -112,6 +112,9 @@ apis:
   - type: Reference
     url: https://api.ibisworld.com/docs/
 common:
+  - type: CapabilityMap
+    url: capabilities/ibisworld-capability-edges.yml
+    name: IBISWorld Business Capability Map
   - type: AgenticAccess
     url: agentic-access/ibisworld-agentic-access.yml
   - type: DomainSecurity
