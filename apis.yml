@@ -38,7 +38,7 @@ tags:
   - Market Research
 url: https://raw.githubusercontent.com/api-evangelist/ibisworld/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: ibisworld:ibisworld-business-environment-api
@@ -112,6 +112,8 @@ apis:
   - type: Reference
     url: https://api.ibisworld.com/docs/
 common:
+  - url: https://www.ibisworld.com/blog/
+    type: Blog
   - type: CapabilityMap
     url: capabilities/ibisworld-capability-edges.yml
     name: IBISWorld Business Capability Map
