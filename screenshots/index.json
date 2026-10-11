@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "ibisworld",
+    "captured_at": "2026-10-11T190552",
+    "source_url": "https://www.ibisworld.com/api/",
+    "source_type": "Portal",
+    "file": "ibisworld-2026-10-11T190552.png",
+    "bytes": 86218,
+    "capture": "playwright-local"
+  }
+]
