@@ -1,13 +1,38 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/ibisworld-openapi.yml
-docs: https://api.ibisworld.com/docs/authentication-22026063e0
-note: IBISWorld's OAuth 2.0 implementation (password grant against /authentication/token) does not use or document scopes; the security scheme defines an empty scopes object and access is governed by the account's subscription (https://api.ibisworld.com/docs/authentication-22026063e0).
+generated: '2026-10-14'
+method: none
+source: openapi/ibisworld-business-environment-api-openapi.yml, openapi/ibisworld-classification-api-openapi.yml,
+  openapi/ibisworld-company-api-openapi.yml, openapi/ibisworld-downloads-api-openapi.yml, openapi/ibisworld-industry-api-openapi.yml
 schemes:
 - name: OAuth2
-  source: openapi/ibisworld-openapi.yml
+  source: openapi/ibisworld-business-environment-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.ibisworld.com/oauth/token
+  description: OAuth 2.0 bearer token authentication.
+- name: OAuth2
+  source: openapi/ibisworld-classification-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.ibisworld.com/oauth/token
+  description: OAuth 2.0 bearer token authentication.
+- name: OAuth2
+  source: openapi/ibisworld-company-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.ibisworld.com/oauth/token
+  description: OAuth 2.0 bearer token authentication.
+- name: OAuth2
+  source: openapi/ibisworld-downloads-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.ibisworld.com/oauth/token
+  description: OAuth 2.0 bearer token authentication.
+- name: OAuth2
+  source: openapi/ibisworld-industry-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://api.ibisworld.com/oauth/token
   description: OAuth 2.0 bearer token authentication.
 scopes: []
+note: The OAuth2 security scheme(s) in the OpenAPI declare no scopes, and no security requirement
+  references one.
