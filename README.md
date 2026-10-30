@@ -1,4 +1,4 @@
-# IBISWorld (ibisworld)
+# IBISWorld
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,58 +66,144 @@
 
 IBISWorld is a leading provider of industry research and market intelligence, offering data on thousands of industries across global markets. IBISWorld provides APIs for accessing industry reports, market size data, and economic forecasts programmatically.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ibisworld/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ibisworld/refs/heads/main/apis.yml)
+**Areas:** Business Intelligence · Economics · Industry Data · Market Research
 
-## Scope
+## IBISWorld on APIs.io
 
-- **Type:** Index
+Everything profiled for IBISWorld is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ibisworld/](https://apis.io/providers/ibisworld/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Business Intelligence
-- Economics
-- Industry Data
-- Market Research
+- [IBISWorld Business Environment API](https://apis.io/apis/ibisworld/ibisworld-business-environment-api/) — Macroeconomic and business environment profile data.
+- [IBISWorld Classification API](https://apis.io/apis/ibisworld/ibisworld-classification-api/) — Industry classification systems and taxonomies.
+- [IBISWorld Company API](https://apis.io/apis/ibisworld/ibisworld-company-api/) — Company-specific information and lookups.
+- [IBISWorld Downloads API](https://apis.io/apis/ibisworld/ibisworld-downloads-api/) — Bulk data export and download operations.
+- [IBISWorld Industry API](https://apis.io/apis/ibisworld/ibisworld-industry-api/) — Industry research reports and market intelligence data.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### IBISWorld API
+Model Context Protocol servers that expose the API to agents.
 
-The IBISWorld API provides programmatic access to industry research data, market intelligence reports, business environment profiles, classification systems, and economic forecasts for thousands of industries across global markets.
+- [ibisworld](https://apis.io/servers/ibisworld/ibisworld/)
 
-- **Human URL:** [https://www.ibisworld.com/api/](https://www.ibisworld.com/api/)
-- **Base URL:** `https://api.ibisworld.com/v3`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Industry Data
-- Market Research
+- [Ibisworld Agentic Access](https://apis.io/agentic-access/ibisworld/ibisworld-agentic-access/)
 
-#### Properties
+#### Collections (6)
 
-- [Documentation](https://www.ibisworld.com/api/)
-- [Reference](https://api.ibisworld.com/docs/)
-- [OpenAPI](openapi/ibisworld-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/ibisworld.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ibisworld.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [IBISWorld API](https://apis.io/collections/ibisworld/open-ibisworld/)
+- [IBISWorld Business Environment API](https://apis.io/collections/ibisworld/open-ibisworld-business-environment-api/)
+- [IBISWorld Business Environment Classification API](https://apis.io/collections/ibisworld/open-ibisworld-classification-api/)
+- [IBISWorld Business Environment Company API](https://apis.io/collections/ibisworld/open-ibisworld-company-api/)
+- [IBISWorld Business Environment Downloads API](https://apis.io/collections/ibisworld/open-ibisworld-downloads-api/)
+- [IBISWorld Business Environment Industry API](https://apis.io/collections/ibisworld/open-ibisworld-industry-api/)
 
-- [LinkedIn](https://www.linkedin.com/company/ibisworld)
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [IBISWorld API Rules](https://apis.io/rules/ibisworld/ibisworld-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ibisworld Authentication](https://apis.io/security/ibisworld/ibisworld-authentication/)
+- [Ibisworld Domain Security](https://apis.io/security/ibisworld/ibisworld-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Ibisworld Scopes](https://apis.io/scopes/ibisworld/ibisworld-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Ibisworld Plans Pricing](https://apis.io/plans/ibisworld/ibisworld-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ibisworld Rate Limits](https://apis.io/rate-limits/ibisworld/ibisworld-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ibisworld Finops](https://apis.io/finops/ibisworld/ibisworld-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.ibisworld.com/)
-- [Portal](https://www.ibisworld.com/api/)
 - [Documentation](https://api.ibisworld.com/docs/)
-- [Data  Navigator](https://data-navigator.ibisworld.com/)
-- [Terms of Service](https://www.ibisworld.com/terms-of-use/)
-- [Rules](rules/ibisworld-rules.yml)
-- [Integrations](https://www.ibisworld.com/integrations/)
+- [Blog](https://www.ibisworld.com/blog/)
+- [Terms of service](https://www.ibisworld.com/terms-of-use/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.0** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 60.0 |
+| Contract quality | 47.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 7.9 |
+
+**Agent readiness 46.4** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ibisworld/](https://apis.io/providers/ibisworld/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for IBISWorld: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ibisworld/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
